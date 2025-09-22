@@ -1,8 +1,17 @@
 import Image from "next/image";
+import { ButtonDemo } from "@/components/ButtonDemo";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 relative overflow-hidden">
+      {/* Moving Background */}
+      <div
+        className="fixed inset-0 -z-10 bg-cover bg-center animate-[moveBackground_120s_linear_infinite]"
+        style={{
+          backgroundImage: 'url(https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/flowers.jpg)',
+          backgroundSize: '400px'
+        }}
+      />
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -50,6 +59,9 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+
+        {/* Liquid Glass Button Demo */}
+        <ButtonDemo />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
